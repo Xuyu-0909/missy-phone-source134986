@@ -37,10 +37,12 @@ Missy Phone（Missy = “miss you”）是一个以单文件 `index.html` 为核
 ### 使用 Netlify
 
 1. 在 Netlify 中导入此 GitHub 仓库，并选择要部署的分支（例如 `main`）。
-2. 仓库根目录的 `netlify.toml` 已配置为直接发布根目录 `.`，构建命令为空，无需安装依赖或运行构建。
+2. 仓库根目录的 `netlify.toml` 已配置为将 `index.html` 和许可说明复制到 `dist` 并发布该目录，无需安装依赖或运行 Next.js 构建。
 3. 点击 Deploy。部署完成后打开 Netlify 提供的网址，确认页面正常加载。
 
 本项目是静态 HTML 应用，不使用 Next.js，因此发布目录不应设置为 `.next`，也无需安装 `@netlify/plugin-nextjs`。
+
+如果 Netlify 的旧设置仍指向 `.next`，请将后台的 Publish directory 改为 `dist`，并确认部署使用包含此 `netlify.toml` 的分支。仓库配置中的发布目录应在部署日志中解析为 `/opt/build/repo/dist`。
 
 ### 方法一：使用 Vercel（推荐）
 

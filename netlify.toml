@@ -1,3 +1,4 @@
 [build]
-  command = ""
-  publish = "."
+  # Stage the standalone HTML app; no Next.js build or plugin is needed.
+  command = "mkdir -p dist && cp index.html LICENSE DISCLAIMER.md dist/"
+  publish = "dist"
